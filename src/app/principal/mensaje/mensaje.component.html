@@ -1,0 +1,20 @@
+<section class="contenedor">
+  <section class="grid">
+    <section class="form-group">
+      <section>
+        <label for="men">Mensaje:</label>
+        <!-- <button [ngxClipboard]="mensaje" class="btn btn-small btn-light ms-auto">copy</button> -->
+      </section>
+      <textarea class="form-control mt-3" name="men" #mensaje [(ngModel)]="info"></textarea>
+    </section>
+    <section class="d-flex mt-3 mx-auto gap-3">
+      <input type="button" value="Copiar mensaje" (click)="CopiarTexto()" class="btn btn-dark" *ngIf="info">
+      <input type="button" class="btn btn-primary" value="Enviar" (click)="EnviarMensaje()">
+    </section>
+  </section>
+</section>
+
+<!-- dos formas de copiar
+- metodo en click y ngmodel
+- [ngxclipboard]=referencia y #referencia
+  -->

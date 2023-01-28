@@ -1,0 +1,57 @@
+<div class="contenedor">
+  <style>
+    .grid-2-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    /* para las secciones hijas del form */
+    .grid-2-cols>* {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    label {
+      min-width: 8ch;
+    }
+
+    .btn {
+      flex: 1;
+    }
+
+    .grid-col-span-2 {
+      grid-column: span 2;
+    }
+  </style>
+  <div class="grid">
+    <form class="grid-2-cols" #esteForm="ngForm">
+      <!-- If ngModel is used within a form tag,  the name attribute must be set -->
+      <section class="">
+        <label for="nom">Nombre:</label>
+        <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="userEnEdicion.Nombre">
+      </section>
+      <section>
+        <label for="ape">Apellido:</label>
+        <input type="text" class="form-control" id="ape" name="ape" [(ngModel)]="userEnEdicion.Apellido">
+      </section>
+      <section class="grid-col-span-2">
+        <label for="cor">Correo:</label>
+        <input type="text" class="form-control" id="cor" name="cor" [(ngModel)]="userEnEdicion.Correo">
+      </section>
+      <section class="grid-col-span-2">
+        <label for="car">Cargo:</label>
+        <select name="car" id="car" class="form-control" [(ngModel)]="userEnEdicion.Cargo">
+          <option *ngFor="let cargo of cargosValues" value="{{cargo}}">{{cargo}}</option>
+        </select>
+      </section>
+      <section class="grid-col-span-2">
+        <input class="btn btn-primary" value="Guardar" (click)="EnviarEditado()">
+        <input class="btn btn-light" value="Cancelar" (click)="CancelarEditado()">
+      </section>
+
+    </form>
+  </div>
+</div>

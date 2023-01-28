@@ -1,0 +1,20 @@
+<div class="contenedor">
+  <div class="grid grid-narrow">
+    <section class="form-group">
+      <label for="username">Nombre de usuario:</label>
+      <input type="text" class="form-control" id="username" [(ngModel)]="nom">
+    </section>
+    <section class="form-group">
+      <label for="password">Contraseña:</label>
+      <input type="password" class="form-control" id="password">
+    </section>
+    <input class="btn btn-primary mt-3" (click)="login()" value="Ingresar">
+
+  </div>
+</div>
+
+<style>
+  .grid-narrow {
+    max-width: 20rem;
+  }
+</style>

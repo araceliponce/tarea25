@@ -1,0 +1,38 @@
+<section class="contenedor">
+    <section class="grid">
+
+        <h2>Búsqueda de usuarios</h2>
+        <section class="">
+            <label for="id">Ingrese ID: </label>
+            <section class="input-group">
+
+                <input type="text" id="id" #txtIdUser class="form-control">
+                <input type="button" value="Buscar" (click)="BuscaUsuario(txtIdUser.value)" class="btn btn-success">
+            </section>
+            <!-- <p class="alert alert-danger" *ngIf="txtIdUser.value.trim.length==0">el campo id no puede quedar vacío</p> -->
+            <!-- <ng-container> -->
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Correo</th>
+                        <th>Cargo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{usuarioEncontrado?.Id}}</td>
+                        <td>{{usuarioEncontrado?.Nombre}}</td>
+                        <td>{{usuarioEncontrado?.Apellido}}</td>
+                        <td>{{usuarioEncontrado?.Correo}}</td>
+                        <td>{{usuarioEncontrado?.Cargo}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- </ng-container> -->
+        </section>
+
+    </section>
+</section>

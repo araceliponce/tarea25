@@ -1,0 +1,51 @@
+<div class="contenedor">
+  <div class="grid">
+    <h2 class="text-center">Añadir Usuario</h2>
+    <!-- <button class="btn btn-success">Añadir usuario</button> -->
+    <form class="abc-form" #esteForm="ngForm">
+      <!-- If ngModel is used within a form tag, either the name attribute must be set or the form
+    control must be defined as 'standalone' in ngModelOptions -->
+      <section>
+        <label for="nom">Nombre:</label>
+        <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="userNuevo.Nombre">
+      </section>
+      <section>
+        <label for="ape">Apellido:</label>
+        <input type="text" class="form-control" id="ape" name="ape" [(ngModel)]="userNuevo.Apellido">
+      </section>
+      <section>
+        <label for="cor">Correo:</label>
+        <input type="text" class="form-control" id="cor" name="cor" [(ngModel)]="userNuevo.Correo">
+      </section>
+      <section>
+        <label for="car">Cargo:</label>
+        <select name="car" id="car" class="form-control" [(ngModel)]="userNuevo.Cargo">
+          <option *ngFor="let cargo of cargosValues" value="{{cargo}}">{{cargo}}</option>
+        </select>
+      </section>
+      <section>
+        <label for="pass1">Contraseña:</label>
+        <input type="password" class="form-control" id="pass1" name="pass1" [(ngModel)]="userPass" #pass1>
+      </section>
+      <section>
+        <label for="pass2">Confirmar contraseña:</label>
+        <input type="password" class="form-control" id="pass2" name="pass2" [(ngModel)]="userPassConfirmacion" #pass2 pass1="ngModel" [ngClass]="{'is-invalid': pass1.value!==pass2.value}">
+      </section>
+      <section class="d-flex mt-3">
+        <input class="btn btn-primary" value="Guardar" (click)="EnviarNuevo()" [disabled]="pass1.value!==pass2.value">
+        <input class="btn btn-light" value="Cancelar" (click)="CancelarNuevo()">
+      </section>
+
+    </form>
+  </div>
+</div>
+
+<style>
+  .d-flex {
+    gap: 1rem;
+  }
+
+  .btn {
+    flex: 1;
+  }
+</style>

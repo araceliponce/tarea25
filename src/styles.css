@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+  /* overflow: hidden; */
+  /* ..... */
+}
+
+.contenedor {
+  background: cornflowerblue;
+  min-height: calc(100% - 3rem);
+  display: grid;
+}
+
+.grid {
+  display: grid;
+  width: min(40rem, 100%);
+  /* max-width: 100%; */
+  margin-inline: auto;
+  background-color: lightblue;
+
+  border-radius: .5rem;
+  padding: 1rem;
+  align-self: center;
+
+}
+
+.align-self-center {
+  align-self: center;
+}
+
+table {
+  table-layout: auto;
+  font-size: clamp(.5rem, 10vw, 1rem) !important;
+}
+
+td,
+th {
+  font-size: inherit !important;
+}

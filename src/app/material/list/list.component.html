@@ -1,0 +1,27 @@
+<p>list works!</p>
+<section class="container-md bg-light rounded p-3">
+  <p class="fs-1 text-center">LISTA DE TAREAS</p>
+
+  <button (click)="CargarTodos()" class="btn btn-info mx-3 my-2">Mostrar lista de tareas</button>
+
+
+
+  <pre class="d-none">{{todosListado|json}}</pre>
+
+  <ul *ngIf="todosListado">
+    <li *ngFor="let item of todosListado" class="form-check">
+
+      <!-- <strong>{{item.id}}: </strong> -->
+      <label for={{item.id}} class="form-check-label">
+        {{item.title | titlecase}}
+      </label>
+      <input type="checkbox" name="" id={{item.id}} [checked]="item.completed" class="form-check-input">
+    </li>
+  </ul>
+</section>
+
+<style>
+  li {
+    list-style: none;
+  }
+</style>
