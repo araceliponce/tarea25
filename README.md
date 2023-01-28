@@ -11,7 +11,30 @@ Funcionalidades:
 - eliminar: sí
 - actualización de tabla tras eliminar: sí
 
+## login
+
 ![](./src/assets/login.png)
+
+## vista de usuarios
+
+![](./src/assets/vista.png)
+
+## nuevo
+
+![](./src/assets/nuevo.png)
+![](./src/assets/vista2.png)
+
+## editar
+
+![](./src/assets/editar.png)   
+(datos autocompletados)    
+![](./src/assets/editar2.png)
+
+## eliminar
+
+![](./src/assets/eliminar.png)
+
+
 
 ...
 <!-- 
