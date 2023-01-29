@@ -7,23 +7,23 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto gap-3">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="vista">VISTA</a>
+          <a class="nav-link active" aria-current="page" routerLink="vista" [ngClass]="{'is-valid': usuarioLogueado, 'is-invalid': !usuarioLogueado}">VISTA</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="busqueda">BUSQUEDA</a>
+          <a class="nav-link active" aria-current="page" routerLink="busqueda" [ngClass]="{'is-valid': usuarioLogueado, 'is-invalid': !usuarioLogueado}">BUSQUEDA</a>
         </li>
         <!-- con *ngIf="usuarioLogueado" deberia mostrar el enlace solo si -->
-        <li class="nav-item" *ngIf="usuarioLogueado">
-          <a class="nav-link active" aria-current="page" routerLink="nuevo">NUEVO</a>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="nuevo" [ngClass]="{'is-valid': usuarioLogueado, 'is-invalid': !usuarioLogueado}">NUEVO</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="mensaje">FEEDBACK</a>
+          <a class="nav-link active" aria-current="page" routerLink="mensaje" [ngClass]="{'is-valid': usuarioLogueado, 'is-invalid': !usuarioLogueado}">FEEDBACK</a>
         </li>
 
         <li class="nav-item">
           <a class="nav-link active btn btn-info" aria-current="page" routerLink="login" *ngIf="!usuarioLogueado">INGRESAR</a>
-          <a class="nav-link active btn btn-danger" aria-current="page" routerLink="login" *ngIf="usuarioLogueado" (click)="logout()">SALIR</a>
+          <a class="nav-link active btn btn-warning" aria-current="page" routerLink="login" *ngIf="usuarioLogueado" (click)="logout()">SALIR</a>
 
         </li>
 
@@ -36,5 +36,15 @@
   .white-text,
   .white-text * {
     color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  .is-invalid {
+    pointer-events: none;
+    opacity: .7;
+  }
+
+  .nav-item:last-child>a {
+    min-width: 10ch;
+    display: block;
   }
 </style>
